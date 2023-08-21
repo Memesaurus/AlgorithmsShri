@@ -17,9 +17,3 @@ export function dfs(tree) {
 
   return [tree.val, ...dfs(tree.left), ...dfs(tree.right)];
 }
-
-// if (!tree) {
-//     return;
-// }
-
-// return [tree.val, ...dfs(tree.left), ...dfs(tree.right)];

@@ -10,7 +10,20 @@
  */
 
 export function bfs(tree) {
-    const result = [];
+    const queue = [tree];
+    const traversal = [];
 
-    return result;
+    while(queue.length) {
+        const node = queue.shift();
+
+        if (!node) {
+            continue;
+        }
+
+        traversal.push(node.val);
+        queue.push(node.left);
+        queue.push(node.right);
+    }
+
+    return traversal;
 }
