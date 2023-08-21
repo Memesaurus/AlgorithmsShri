@@ -11,20 +11,11 @@
  */
 
 export function dfs(tree) {
-    const traversal = [];
+  if (!tree) {
+    return [];
+  }
 
-    const traverse = (node) => {
-        if (!node) {
-            return;
-        }
-
-        traversal.push(node.val);
-        traverse(node.left);
-        traverse(node.right)
-    }
-
-    traverse(tree);
-    return traversal;
+  return [tree.val, ...dfs(tree.left), ...dfs(tree.right)];
 }
 
 // if (!tree) {
