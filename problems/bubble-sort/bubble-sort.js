@@ -5,9 +5,10 @@ export function bubbleSort(arr) {
     const swap = (a, b) => [arr[a], arr[b]] = [arr[b], arr[a]];
 
     for (let i = 0; i < arr.length; i++) {
-        let j = i + 1;
-        while(arr[j] < arr[i]) {
-            swap(i--, j--);
+        for (let j = 0; j < arr.length - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(j, j + 1);
+            }
         }
     }
 
